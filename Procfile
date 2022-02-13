@@ -1,0 +1,1 @@
+web: gunicorn quant.wsgi:application
