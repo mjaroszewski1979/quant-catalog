@@ -33,12 +33,30 @@ class CreatePageLocators(object):
 
     TITLE_FIELD = (By.NAME, 'title')
     SLUG_FIELD = (By.NAME, 'slug')
-    MARKET_FIELD = (By.XPATH, "//select[@name='market']/option[text()='stocks']")
+    MARKET_FIELD = (By.ID, 'id_market')
     CAGR_FIELD = (By.NAME, 'cagr')
     SHARPE_FIELD = (By.NAME, 'sharpe')
     DESCRIPTION_FIELD = (By.NAME, 'description')
     CREATE_BUTTON = (By.XPATH, "//div[@class='col-12']//input[@class='primary']")
     CREATE_MSG = (By.XPATH, "//div[@class='row']//h2")
+
+class UpdatePageLocators(object):
+
+    UPDATE_BUTTON = (By.XPATH, "//div[@class='col-12']//input[@class='primary']")
+    UPDATE_MSG = (By.XPATH, "//div[@class='row']//h2")
+
+class DeletePageLocators(object):
+
+    DELETE_BUTTON = (By.XPATH, "//div[@class='col-12']//input[@class='primary']")
+    ADMIN_LOGIN = (By.CLASS_NAME, 'submit-row')
+    VIEW_SITE_LINK = (By.LINK_TEXT, 'VIEW SITE')
+    DELETE_LINK = (By.LINK_TEXT, 'DELETE STRATEGY')
+
+class StrategiesPageLocators(object):
+
+    STRATEGIES_TITLE = (By.XPATH, "//section//h2")
+
+
     
 
 
