@@ -210,12 +210,3 @@ class MarketDetailPage(BasePage):
         market_heading = self.get_element_text(MarketPageLocators.MARKET_HEADING)
         text = 'STOCKS - INVESTMENT IDEAS'
         return text in market_heading
-
-
-
-
-
-
-    
-
-    
