@@ -8,7 +8,7 @@ from django.urls import reverse
 
 
 
-class BitcoinTest(StaticLiveServerTestCase):
+class QuantTest(StaticLiveServerTestCase):
 
     def setUp(self):
         self.driver =  webdriver.Chrome('selenium_tests/chromedriver.exe')
@@ -30,10 +30,10 @@ class BitcoinTest(StaticLiveServerTestCase):
         group_name = 'quant'
         self.group = Group(name=group_name)
         self.group.save()
-        self.user = User.objects.create_superuser(
-            username='superuser', password='secret', email='admin@example.com'
+        self.user = User.objects.create(
+            username='superuser', password='secret'
         )
-        self.user.force_login(username='superuser', password='secret')
+        self.user.save()
 
     def tearDown(self):
         self.user.delete()
