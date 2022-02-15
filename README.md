@@ -17,6 +17,10 @@
 * Storing app’s secure credentials in environment variables
 --------------------------------------------------
 
+### Code Coverage:
+
+<img src="https://github.com/mjaroszewski1979/quant-catalog/blob/main/cov_report.png">
+
 ### Docker info:
 * Pull an image from my Docker Hub - click on the icon below
 * Create and start a container 
