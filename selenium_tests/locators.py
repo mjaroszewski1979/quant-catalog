@@ -54,7 +54,11 @@ class DeletePageLocators(object):
 
 class StrategiesPageLocators(object):
 
-    STRATEGIES_TITLE = (By.XPATH, "//section//h2")
+    STRATEGIES_TITLE = (By.XPATH, "//section//h1")
+
+class MarketPageLocators(object):
+
+    MARKET_HEADING = (By.XPATH, "//section//h2")
 
 
     

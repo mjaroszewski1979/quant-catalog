@@ -1,6 +1,14 @@
 from selenium.webdriver.support.ui import WebDriverWait as W
 from selenium.webdriver.support import expected_conditions as EC
-from .locators import IndexPageLocators, SignupPageLocators, LoginPageLocators, CreatePageLocators, UpdatePageLocators, DeletePageLocators, StrategiesPageLocators
+from .locators import (
+    IndexPageLocators, 
+    SignupPageLocators, 
+    LoginPageLocators, 
+    CreatePageLocators, 
+    UpdatePageLocators, 
+    DeletePageLocators, 
+    StrategiesPageLocators, 
+    MarketPageLocators )
 
 
 
@@ -190,7 +198,7 @@ class StrategiesDetailPage(BasePage):
 
     def is_strategies_detail_heading_displayed_correctly(self):
         strategies_heading = self.get_element_text(StrategiesPageLocators.STRATEGIES_TITLE)
-        text = 'MOMENTUM'
+        text = 'DETAILED INFORMATION ABOUT MOMENTUM'
         return text in strategies_heading
 
 class MarketDetailPage(BasePage):
@@ -199,7 +207,7 @@ class MarketDetailPage(BasePage):
         return 'Quant Catalog | Stocks' in self.driver.title 
 
     def is_market_detail_heading_displayed_correctly(self):
-        market_heading = self.get_element_text(StrategiesPageLocators.STRATEGIES_TITLE)
+        market_heading = self.get_element_text(MarketPageLocators.MARKET_HEADING)
         text = 'STOCKS - INVESTMENT IDEAS'
         return text in market_heading
 

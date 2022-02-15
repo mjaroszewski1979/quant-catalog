@@ -4,7 +4,7 @@ from . import page
 from catalog.models import Strategy, Market
 from django.contrib.auth.models import User, Group
 from django.urls import reverse
-import time
+
 
 
 
@@ -30,9 +30,10 @@ class BitcoinTest(StaticLiveServerTestCase):
         group_name = 'quant'
         self.group = Group(name=group_name)
         self.group.save()
-        self.user = User.objects.create_user(username='testuser', password='12345')
-        self.user.is_staff = True
-        self.user.save()
+        self.user = User.objects.create_superuser(
+            username='superuser', password='secret', email='admin@example.com'
+        )
+        self.user.force_login(username='superuser', password='secret')
 
     def tearDown(self):
         self.user.delete()
@@ -40,7 +41,7 @@ class BitcoinTest(StaticLiveServerTestCase):
         self.driver.close()
 
 
-    '''def test_indexpage(self):
+    def test_indexpage(self):
         self.driver.get(self.live_server_url)
         index_page = page.IndexPage(self.driver)
         assert index_page.is_title_matches()
@@ -92,10 +93,10 @@ class BitcoinTest(StaticLiveServerTestCase):
         self.group.save()
         self.driver.get(self.live_server_url + '/admin/')
         delete_page = page.DeletePage(self.driver)
-        assert delete_page.is_delete_form_works()'''
+        assert delete_page.is_delete_form_works()
 
     def test_strategiesdetailpage(self):
-        self.driver.get(self.live_server_url + reverse('strategies_detail', args= (self.new_strategy.slug, )))
+        self.driver.get(self.live_server_url + reverse('strategy_detail', args= (self.new_strategy.slug, )))
         strategies_page = page.StrategiesDetailPage(self.driver)
         assert strategies_page.is_title_matches()
         assert strategies_page.is_strategies_detail_heading_displayed_correctly()
