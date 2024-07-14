@@ -1,9 +1,9 @@
 ## Quant Catalog
-### This is a Python application powered by Django and its Object-Relational Mapper to provide convenient access to stored data. In fact, Django's ORM is just a pythonical way to create SQL to query and manipulate your database and get results in a pythonic fashion. In this particular case users are able to view different trading strategies and related financial markets. After completing the registration subscribers can login and are now able to create their own investment strategy. To delete records from the database users need to be added to special group and granted permissions by the website administrator.
+### This is a Python-based application designed for quantitative finance enthusiasts and professionals. This repository includes a collection of trading algorithms and data analysis tools, built using the Django framework and various financial data sources. The project aims to provide users with robust tools for backtesting and analyzing trading strategies.
 
 --------------------------------------------------
 
-### Features:
+### Features
 * Working with template inheritance mechanism to build a base “skeleton” template that contains all the common elements and defines blocks that child templates can override
 * Inserting images with dynamic path by utilizing built-in 'add' filter designed to format template variables
 * Taking full advantage of Django's built-in features like cross-site request forgery protection to ensure safe data transfer in web forms to a database
@@ -13,10 +13,48 @@
 * Applying GroupRequiredMixin provided by a third-party module - django-braces - to ensure that the requesting user is in the group specified
 * Breaking logic into smaller parts by adding various new Django applications to an existing project 
 * Writing as much functionality as possible in models or utility files instead of views 
-* Serving static files with WhiteNoise to accomplish high performance and efficiency without depending on nginx, Amazon S3 or any other external service
 * Storing app’s secure credentials in environment variables
---------------------------------------------------
 
+### Installation
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/mjaroszewski1979/quant-catalog.git
+    cd quant-catalog
+    ```
+2. Create a Virtual Environment:
+    ```bash
+    python3 -m venv env
+    source env/bin/activate
+    ```
+3. Install the dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+3. Install the dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+4. Apply Migrations and Start the Server:
+    ```bash
+    python manage.py migrate
+    python manage.py runserver
+    ```
+
+### Usage
+* Access the Application: Open your browser and navigate to http://127.0.0.1:8000/.
+* Explore Features: Use the web interface to interact with the trading algorithms and data analysis tools.
+
+### Testing
+Unit Tests:
+```bash
+python manage.py test
+```
+Code Coverage:
+```bash
+coverage run -p manage.py test
+coverage combine
+coverage html
+```
 ### Code Coverage:
 
 <img src="https://github.com/mjaroszewski1979/quant-catalog/blob/main/cov_report.png">
@@ -27,14 +65,25 @@
 * Pass environment variables to your container
   * with the -e flag or using .env file
 
-```
+```bash
 docker run -p 8000:8000 -e SECRET_KEY="<your secret key>" <imagename>
-
 ```
-```
+```bash
 docker run -p 8000:8000 --env-file .env <imagename>
-
 ```
+
+### Technologies Used
+* Django: Framework for building the application.
+* HTML5UP!: Responsive and visually appealing HTML templates.
+* Docker: Containerization for easy deployment.
+* Selenium: Automated browser testing to ensure application functionality.
+* WhiteNoise: Serves static files efficiently without external services.
+
+### Contributing
+Contributions are welcome! Please fork the repository and create a pull request with your changes. Ensure that your code adheres to the project's coding standards and includes appropriate tests.
+
+### Contact
+For any inquiries or issues, please contact https://github.com/mjaroszewski1979/
 
 --------------------------------------------------
 
