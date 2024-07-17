@@ -78,3 +78,70 @@ Requirement | Condition | Expected Outcome | Test Case
 ----------- | --------- | ---------------- | ---------
 The Delete Strategy page must handle GET requests correctly. | When a GET request is made to the Delete Strategy URL with a strategy slug. | The response should have a status code of 200 and use the strategies_delete.html template if the user is in the 'quant' group. The response must contain the text 'Quant Catalog Delete Strategy'. | test_strategies_delete_user_in_group
 Users not in the 'quant' group should be redirected on attempting to access the Delete Strategy page. | When a GET request is made to the Delete Strategy URL by a user not in the 'quant' group. | The response should redirect to the login page. | test_strategies_delete_user_not_in_group
+
+### Selenium Tests
+
+#### Index Page Requirements
+
+Requirement | Condition | Expected Outcome | Test Case
+----------- | --------- | ---------------- | ---------
+The index page must display the correct title. | When the index page is loaded. | The page title should be 'Quant Catalog Home'. | is_title_matches
+The index page must display the correct heading. | When the index page is loaded. | The heading should be 'Hi, I’m Your Trading Mentor'. | is_index_heading_displayed_correctly
+The signup link must navigate to the signup page correctly. | When the signup link on the index page is clicked. | The page title should change to 'Quant Catalog Signup'. | is_signup_link_works
+The logo link must navigate back to the index page correctly. | When the logo link on the index page is clicked. | The page title should change to 'Quant Catalog Home'. | is_logo_link_works
+The login link must navigate to the login page correctly. | When the login link on the index page is clicked. | The page title should change to 'Quant Catalog Login'. | is_login_link_works
+The homepage link must navigate back to the index page correctly. | When the homepage link on the index page is clicked. | The page title should change to 'Quant Catalog Home'. | is_homepage_link_works
+The strategies link must navigate to the strategies page correctly. | When the strategies link on the index page is clicked. | The page title should change to 'Quant Catalog Strategies'. | is_strategies_link_works
+The markets link must navigate to the market detail page correctly. | When the markets link on the index page is clicked. | The page title should change to 'Quant Catalog  Stocks'. | is_market_link_works
+The CAGR link must navigate to the CAGR page correctly. | When the CAGR link on the index page is clicked. | The page title should change to 'Quant Catalog CAGR'. | is_cagr_link_works
+The Sharpe link must navigate to the Sharpe page correctly. | When the Sharpe link on the index page is clicked. | The page title should change to 'Quant Catalog Sharpe'. | is_sharpe_link_works
+The Long Only link must navigate to the Long Only page correctly. | When the Long Only link on the index page is clicked. | The page title should change to 'Quant Catalog Long Only'. | is_long_link_works
+
+#### Signup Page Requirements
+
+Requirement | Condition | Expected Outcome | Test Case
+----------- | --------- | ---------------- | ---------
+The signup page must display the correct title. | When the signup page is loaded. | The page title should be 'Quant Catalog Signup'. | is_title_matches
+The signup form must process input data correctly. | When valid data is entered into the signup form and submitted. | The page title should change to 'Quant Catalog | Login'. | is_signup_form_works
+
+#### Login Page Requirements
+
+Requirement | Condition | Expected Outcome | Test Case
+----------- | --------- | ---------------- | ---------
+The login page must display the correct title. | When the login page is loaded. | The page title should be 'Quant Catalog Login'. | is_title_matches
+The login form must process input data correctly. | When valid credentials are entered into the login form and submitted. | The text 'LOGOUT' should be visible on the page. | is_login_form_works
+The logout link must navigate back to the index page correctly. | When the logout link is clicked. | The page title should change to 'Quant Catalog Home'. | is_logout_link_works
+
+#### Create Page Requirements
+
+Requirement | Condition | Expected Outcome | Test Case
+----------- | --------- | ---------------- | ---------
+The create page must display the correct title. | When the create page is loaded. | The page title should be 'Quant Catalog Create Strategy'. | is_title_matches
+The create form must process input data correctly. | When valid strategy details are entered into the create form and submitted. | The message 'Strategy was created successfully' should be visible. | is_create_form_works
+
+#### Update Page Requirements
+
+Requirement | Condition | Expected Outcome | Test Case
+----------- | --------- | ---------------- | ---------
+The update page must display the correct title. | When the update page is loaded. | The page title should be 'Quant Catalog Update Strategy'. | is_title_matches
+The update form must process input data correctly. | When updates are made to a strategy and the form is submitted. | The message 'Strategy was updated successfully' should be visible. | is_update_form_works
+
+#### Delete Page Requirements
+
+Requirement | Condition | Expected Outcome | Test Case
+----------- | --------- | ---------------- | ---------
+The delete form must process the deletion of a strategy correctly. | When valid credentials are entered, and a strategy is selected for deletion. | The message 'Strategy was deleted successfully' should be visible. | is_delete_form_works
+
+#### Strategies Page Requirements
+
+Requirement | Condition | Expected Outcome | Test Case
+----------- | --------- | ---------------- | ---------
+The strategies page must display the correct title. | When the strategies page is loaded. | The page title should be 'Quant Catalog Strategies'. | is_title_matches
+The strategies page must display the correct heading. | When the strategies page is loaded. | The heading should be 'MOMENTUM'. | is_strategies_heading_displayed_correctly
+
+#### Strategies Detail Page Requirements
+
+Requirement | Condition | Expected Outcome | Test Case
+----------- | --------- | ---------------- | ---------
+The strategies detail page must display the correct title. | When the strategies detail page is loaded. | The page title should be 'Quant Catalog Momentum'. | is_title_matches
+The strategies detail page must display the correct heading. | When the strategies detail page is loaded. | The heading should be 'DETAILED INFORMATION ABOUT MOMENTUM'. | is_strategies_detail_heading_displayed_correctly
