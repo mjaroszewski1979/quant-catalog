@@ -102,7 +102,7 @@ The Long Only link must navigate to the Long Only page correctly. | When the Lon
 Requirement | Condition | Expected Outcome | Test Case
 ----------- | --------- | ---------------- | ---------
 The signup page must display the correct title. | When the signup page is loaded. | The page title should be 'Quant Catalog Signup'. | is_title_matches
-The signup form must process input data correctly. | When valid data is entered into the signup form and submitted. | The page title should change to 'Quant Catalog | Login'. | is_signup_form_works
+The signup form must process input data correctly. | When valid data is entered into the signup form and submitted. | The page title should change to 'Quant Catalog Login'. | is_signup_form_works
 
 #### Login Page Requirements
 
