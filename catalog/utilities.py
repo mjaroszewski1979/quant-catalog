@@ -1,5 +1,7 @@
-
+# List of image filenames
 pics = ['pic1', 'pic2', 'pic3', 'pic4', 'pic5', 'pic6']
+
+# List of motivational and financial quotes
 quotes = [
     "It takes character to sit with all that cash and to do nothing. I didn't get to the top where I am by going after mediocre opportunities.",
     "One of the greatest ways to avoid trouble is to keep it simple...the system often goes out of control",
@@ -8,5 +10,9 @@ quotes = [
     "If you can't take a small loss, sooner or later you will take the mother of all losses.",
     "Win or lose, everybody gets what they want out of the market. Some people seem to like to lose, so they win by losing money."
 ]
+
+# List of financial and trading-related URLs
 links = ['https://quantpedia.com/', 'https://alvarezquanttrading.com/', 'https://dualmomentum.net/', 'https://www.turtletrader.com/', 'https://www.trendfollowing.com/', 'https://mishtalk.com/']
+
+# Combine pics, quotes, and links into a single iterable of tuples
 zips = zip(pics, quotes, links)
