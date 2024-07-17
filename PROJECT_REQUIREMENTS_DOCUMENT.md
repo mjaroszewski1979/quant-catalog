@@ -31,7 +31,7 @@ The Long Only page must handle GET requests correctly. | When a GET request is m
 Requirement | Condition | Expected Outcome | Test Case
 ----------- | --------- | ---------------- | ---------
 The Search page must handle GET requests correctly. | When a GET request is made to the Search URL. | The response should have a status code of 200 and use the search.html template. The response must contain the text 'Quant Catalog Search'. | test_search_get
-The search functionality must process query parameters correctly. | When a GET request is made to the Search URL with a query parameter. The response should correctly reflect the query in the context. The context should include the query, the corresponding market, and the relevant strategy. | test_search_query
+The search functionality must process query parameters correctly. | When a GET request is made to the Search URL with a query parameter. | The response should correctly reflect the query in the context. The context should include the query, the corresponding market, and the relevant strategy. | test_search_query
 
 #### Signup Page Requirements
 
@@ -77,4 +77,4 @@ The Strategy Detail page must handle GET requests correctly. | When a GET reques
 Requirement | Condition | Expected Outcome | Test Case
 ----------- | --------- | ---------------- | ---------
 The Delete Strategy page must handle GET requests correctly. | When a GET request is made to the Delete Strategy URL with a strategy slug. | The response should have a status code of 200 and use the strategies_delete.html template if the user is in the 'quant' group. The response must contain the text 'Quant Catalog Delete Strategy'. | test_strategies_delete_user_in_group
-Users not in the 'quant' group should be redirected on attempting to access the Delete Strategy page. | When a GET request is made to the Delete Strategy URL by a user not in the 'quant' group. The response should redirect to the login page. | test_strategies_delete_user_not_in_group
+Users not in the 'quant' group should be redirected on attempting to access the Delete Strategy page. | When a GET request is made to the Delete Strategy URL by a user not in the 'quant' group. | The response should redirect to the login page. | test_strategies_delete_user_not_in_group
